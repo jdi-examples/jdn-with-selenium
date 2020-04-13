@@ -1,0 +1,18 @@
+{
+	"package": "io.github.epam",
+	"siteName": "EpamGithubSite",
+	"nameCase": "camelCase",
+	"typeCase": "PascalCase",
+	"site": "package {{package}};\n\t\nimport com.epam.jdi.light.elements.pageobjects.annotations.*;\nimport {{package}}.pages.*;\n\n@JSite(\"{{domain}}\")\npublic class {{siteName}} {\n{{pages}} \t\n}",
+	"siteElement": "    @Url(\"{{url}}\") @Title(\"{{title}}\") \n    public static {{type}} {{name}};",
+	"page": "package {{package}}.pages;\n\nimport com.epam.jdi.light.elements.pageobjects.annotations.simple.UI;\nimport com.epam.jdi.light.elements.composite.*;\nimport com.epam.jdi.light.ui.html.complex.*;\nimport com.epam.jdi.light.ui.html.common.*;\nimport {{package}}.sections.*;\n\npublic class {{type}} extends WebPage {\n{{elements}}\t\n}",
+	"pageElementCss": "    @FindBy(css = \"{{locator}}\") public WebElement {{name}};",
+	"pageElementXPath": "    @FindBy(xpath = \"{{locator}}\") public WebElement {{name}};",
+	"pageElementComplex": "    @J{{type}}({{locators}}) \n\tpublic {{type}} {{name}};",
+	"locatorCss": "{{type}} = \"{{locator}}\",",
+	"locatorXPath": "{{type}} = \"{{locator}}\",",
+	"section": "package {{package}}.sections;\n\nimport com.epam.jdi.light.elements.pageobjects.annotations.simple.UI;\nimport com.epam.jdi.light.elements.composite.*;\nimport com.epam.jdi.light.ui.html.complex.*;\nimport com.epam.jdi.light.ui.html.common.*;\n\npublic class {{type}} extends Section {\n{{elements}}\t\n}",
+	"form": "package {{package}}.sections;\n\nimport com.epam.jdi.light.elements.pageobjects.annotations.simple.UI;\nimport com.epam.jdi.light.elements.composite.*;\nimport com.epam.jdi.light.ui.html.complex.*;\nimport com.epam.jdi.light.ui.html.common.*;\nimport {{package}}.entities.*;\n\npublic class {{type}} extends Form<{{data}}> {\n{{elements}}\t\n}",
+	"data": "package {{package}}.entities;\n\nimport com.epam.jdi.tools.DataClass;\n\npublic class {{type}} extends DataClass<{{type}}> {\n{{elements}}\n}",
+	"dataElement": "    public String {{name}};"
+}
